@@ -1,4 +1,7 @@
 import React from 'react';
+import Tile from './Tile';
+import { Link } from 'react-router-dom';
+// Where top 20 stories will be presented
 
 class Home extends React.Component{
     constructor(props){
@@ -12,8 +15,10 @@ class Home extends React.Component{
     render(){
         return (
             <div>
-                <h1>hello</h1>
-                <p>{this.state.stories[0]}</p>
+                <h1>Stories</h1>
+                <ul>
+                    {this.state.stories.map((story) => <Tile key={story} id={story}/>)}
+                </ul>
             </div>
         );
     }
@@ -26,9 +31,4 @@ class Home extends React.Component{
     }
 }
 
-// const Home = () => (
-//     <div>
-//         <h1>hello</h1>
-//     </div>
-// )
 export default Home;
