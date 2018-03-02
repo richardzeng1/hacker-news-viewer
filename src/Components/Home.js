@@ -7,9 +7,10 @@ class Home extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            stories:[]
+            stories:[],
+            page:0
         }
-        this.get_data();
+        this.getData();
     }
 
     render(){
@@ -23,10 +24,14 @@ class Home extends React.Component{
         );
     }
 
-    get_data(){
+    componentDidMount(){
+         this.getData();
+    }
+
+    getData(){
         fetch(' https://hacker-news.firebaseio.com/v0/topstories.json')
         .then(response => response.json())
-        .then(data => this.setState({stories: data}))
+        .then(data=> this.setState({stories:data.slice(0,19)}))
         .catch(e=>console.log('error', e))
     }
 }

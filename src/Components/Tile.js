@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './TileStyle.css';
 
 class Tile extends React.Component{
     constructor(props){
@@ -13,7 +14,7 @@ class Tile extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="tile">
                 <Link to ={`/${this.props.id}`}>{this.state.title}</Link>
             </div>
         );
@@ -21,6 +22,10 @@ class Tile extends React.Component{
 
     componentDidMount(){
         this.getData();
+    }
+
+    componentWillUnmount(){
+        this.setState({title:""});
     }
 
     getData(){
