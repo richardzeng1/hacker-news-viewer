@@ -1,6 +1,7 @@
 import React from 'react';
 import Fetch from '../Fetch';
-import { Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
+import './StoryPageStyle.css';
 
 class StoryPage extends React.Component{
     constructor(props){
@@ -8,18 +9,19 @@ class StoryPage extends React.Component{
         this.state={
             title: "",
             text:"",
-            url:"",
+            url:null,
             id: parseInt(props.match.params.id, 10)
         }
     }
 
     render(){
         return(
-            <div>
-                <Link to = '/'>Home</Link>
-                <h1>{this.state.title}</h1>
-                <h1>{this.state.text}</h1>
-                <h1>{this.state.url}</h1>
+            <div className='page'>
+                <Link to = '/' className='title'>Y Hacker News</Link>
+                <div className='story_data'>
+                    <a href={this.state.url} className='to_url'><h2>{this.state.title}</h2></a>
+                    <h4 className='story_text'>{this.state.text}</h4>
+                </div>
             </div>
         )
     }

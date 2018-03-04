@@ -1,6 +1,7 @@
 import React from 'react';
 import Tile from './Tile';
 import { Link } from 'react-router-dom';
+import './HomeStyle.css';
 // Where top 20 stories will be presented
 
 class Home extends React.Component{
@@ -15,12 +16,15 @@ class Home extends React.Component{
 
     render(){
         return (
+
             <div>
-                <h1>Stories</h1>
+                <h1 className="title">Y Hacker News</h1>
+
                 <ul>
                     {this.state.stories.map((story) => <Tile key={story} id={story}/>)}
                 </ul>
             </div>
+
         );
     }
 
