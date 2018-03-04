@@ -17,8 +17,9 @@ class Home extends React.Component{
     render(){
         return (
 
-            <div>
-                <h1 className="title">Y Hacker News</h1>
+            <div className='page'>
+
+                <h1 className="title">Hacker News</h1>
 
                 <ul>
                     {this.state.stories.map((story) => <Tile key={story} id={story}/>)}

@@ -22,8 +22,8 @@ class Tile extends React.Component{
                 <Link to ={`/${this.props.id}`} className="link">
                     <h4 className="mainData">{this.state.title}</h4>
                 </Link>
-                <h6 className="supData">Submited by: {this.state.by}</h6>
-                <h6 className="supData">Score: {this.state.score}</h6>
+                <p className="supData">Submited by: {this.state.by}</p>
+                <p className="supData">Score: {this.state.score}</p>
             </div>
         );
     }

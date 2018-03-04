@@ -1,8 +1,9 @@
 import React from 'react';
 import Main from './Main';
+import './AppStyle.css';
 
 const App = () => (
-    <div>
+    <div className='page'>
         <Main/>
     </div>
 );
