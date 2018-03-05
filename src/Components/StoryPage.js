@@ -1,5 +1,4 @@
 import React from 'react';
-import Fetch from '../Fetch';
 import { Switch, Route, Link } from 'react-router-dom';
 import './StoryPageStyle.css';
 import Comment from './Comment';
@@ -25,7 +24,7 @@ class StoryPage extends React.Component{
                     <a href={this.state.url} className='to_url'><h2>{this.state.title}</h2></a>
                     <div dangerouslySetInnerHTML={{ __html: this.state.text}} />
                 </div>
-                
+
                 <div className='comment_section'>
                     {this.state.kids.map((kid) => <Comment key={kid} id={kid}/>)}
                 </div>
