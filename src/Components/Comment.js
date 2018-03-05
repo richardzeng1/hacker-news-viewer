@@ -41,11 +41,11 @@ class Comment extends React.Component{
     displayComments(){
         if (this.state.display){
             if (this.state.kids!=null){
-            return(
-                <div className='comment_section'>
-                    {this.state.kids.map((kid) => <Comment key={kid} id={kid}/>)}
-                </div>
-            );
+                return(
+                    <div className='comment_section'>
+                        {this.state.kids.map((kid) => <Comment key={kid} id={kid}/>)}
+                    </div>
+                );
             }
         }
     }
