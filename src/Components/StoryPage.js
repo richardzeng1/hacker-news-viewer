@@ -3,6 +3,12 @@ import { Switch, Route, Link } from 'react-router-dom';
 import './StoryPageStyle.css';
 import Comment from './Comment';
 
+/*
+This is the compnent that displays the link to the story and the comment
+section. Only the first layer of a comment is called. If a comment has a
+reply, the Comment component will render another child comment.
+*/
+
 class StoryPage extends React.Component{
     constructor(props){
         super(props);

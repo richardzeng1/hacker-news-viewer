@@ -1,6 +1,11 @@
 import React from 'react';
 import './CommentStyle.css';
 
+/*
+This is the Comment component. If the comment has a reply, the component will
+render a new child Comment component.
+*/
+
 class Comment extends React.Component{
     constructor(props){
         super(props);
