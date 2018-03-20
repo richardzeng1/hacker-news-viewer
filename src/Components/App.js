@@ -1,10 +1,9 @@
 import React from 'react';
-import Header from './Header';
 import Main from './Main';
+import './AppStyle.css';
 
 const App = () => (
-    <div>
-        <Header/>
+    <div className='page'>
         <Main/>
     </div>
 );

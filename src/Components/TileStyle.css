@@ -1,0 +1,26 @@
+.tile{
+    padding-left:10px;
+    font-family: Verdana;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 10px;
+    border-left: 2px solid;
+}
+
+.supData{
+    font-size: 14px;
+    padding:0px;
+    margin:0px;
+}
+
+.mainData{
+    font-size: 18px;
+    padding:0px;
+    text-decoration: none;
+}
+
+.link{
+    text-decoration: none;
+    color: #ff6600;
+}
