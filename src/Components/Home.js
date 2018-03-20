@@ -30,7 +30,7 @@ class Home extends React.Component{
                     {this.state.stories.map((story) => <Tile key={story} id={story}/>)}
                 </ul>
                 <div className='button_div'>
-                <button className='load_button' onClick={()=>this.getNewPage()}>Load More</button>
+                    <button className='load_button' onClick={()=>this.getNewPage()}>Load More</button>
                 </div>
             </div>
 

@@ -37,16 +37,6 @@ class Tile extends React.Component{
         );
     }
 
-    // This is a quick viewer of the text of the story.
-    // quickView(){
-    //     if (this.state.text!=null){
-    //         return(
-    //             {this.quickViewButton()};
-    //             {this.quickViewDisplay()};
-    //         );
-    //     }
-    // }
-
     quickViewButton(){
         if (this.state.text!=null){
             if(!this.state.display){
