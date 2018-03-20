@@ -32,6 +32,7 @@ class StoryPage extends React.Component{
                 </div>
 
                 <div className='comment_section'>
+                    
                     {this.state.kids.map((kid) => <Comment key={kid} id={kid}/>)}
                 </div>
             </div>
