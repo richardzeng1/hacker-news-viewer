@@ -2,9 +2,27 @@
     font-size:50px;
     font-family: Verdana;
     margin-left: 0px;
-    color:#ff6600;
+    color: #ff6600;
 }
 
+.load_button{
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    background-color: #3B83E5;
+}
+
+.button_div{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 .page{
+    padding: 0px;
     margin:0px;
 }

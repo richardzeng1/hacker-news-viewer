@@ -23,7 +23,6 @@ class Comment extends React.Component{
                 <div className='comment_text' dangerouslySetInnerHTML={{ __html: this.state.text}} />
                 <p className='commentator'>submitted by: {this.state.by}</p>
                 {this.displayComments()}
-                {console.log(this.state.kids)}
                 {this.displayButton()}
             </div>
         );
