@@ -40,6 +40,12 @@ class Home extends React.Component{
     getNewPage(){
         this.setState({page:this.state.page+1});
         this.getData();
+
+    }
+
+    // Scrolls to top of page when new stories loaded
+    componentDidUpdate(){
+        window.scrollTo(0,0);
     }
 
     componentDidMount(){
