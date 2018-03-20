@@ -27,7 +27,7 @@ class StoryPage extends React.Component{
                 <Link to = '/' className='title'>Y Hacker News</Link>
 
                 <div className='story_data'>
-                    <a href={this.state.url} className='to_url'><h2>{this.state.title}</h2></a>
+                    {this.getTitle()}
                     <div dangerouslySetInnerHTML={{ __html: this.state.text}} />
                 </div>
 
@@ -36,6 +36,18 @@ class StoryPage extends React.Component{
                 </div>
             </div>
         )
+    }
+
+    getTitle(){
+        if (this.state.url!=null){
+            return(
+                <a href={this.state.url} className='to_url'><h2>Link: {this.state.title}</h2></a>
+            );
+        }else{
+            return(
+                <h2>{this.state.title}</h2>
+            );
+        }
     }
 
     componentDidMount(){
