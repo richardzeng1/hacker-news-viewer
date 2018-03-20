@@ -16,7 +16,9 @@ class Tile extends React.Component{
             title:"",
             by:"",
             score:"",
-            url:null
+            url:null,
+            text:null,
+            visible:false
         }
 
     }
@@ -29,8 +31,47 @@ class Tile extends React.Component{
                 </Link>
                 <p className="supData">Submited by: {this.state.by}</p>
                 <p className="supData">Score: {this.state.score}</p>
+                {this.quickViewButton()}
+                {this.quickViewDisplay()}
             </div>
         );
+    }
+
+    // This is a quick viewer of the text of the story.
+    // quickView(){
+    //     if (this.state.text!=null){
+    //         return(
+    //             {this.quickViewButton()};
+    //             {this.quickViewDisplay()};
+    //         );
+    //     }
+    // }
+
+    quickViewButton(){
+        if (this.state.text!=null){
+            if(!this.state.display){
+                return(
+                    <button onClick={()=> this.setState({display:!this.state.display})}>Quick View</button>
+                );
+            }else{
+                return(
+                    <button onClick={()=> this.setState({display:!this.state.display})}>Close</button>
+                );
+            }
+        }
+
+    }
+
+    quickViewDisplay(){
+        if (this.state.text!=null){
+            if (this.state.display){
+                return(
+                    <div className='quick_view_display'>
+                        <div dangerouslySetInnerHTML={{ __html: this.state.text}} />
+                    </div>
+                );
+            }
+        }
     }
 
     componentDidMount(){
@@ -44,7 +85,7 @@ class Tile extends React.Component{
     getData(){
          fetch(`https://hacker-news.firebaseio.com/v0/item/${this.props.id}.json?print=pretty`)
          .then(response=>response.json())
-         .then(data=> this.setState({title: data.title, by:data.by, score:data.score, url:data.url}))
+         .then(data=> this.setState({title: data.title, by:data.by, score:data.score, url:data.url, text:data.text}))
          .catch(e=>console.log('error', e))
     }
 }
