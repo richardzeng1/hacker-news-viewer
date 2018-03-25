@@ -24,7 +24,15 @@ class StoryPage extends React.Component{
     render(){
         return(
             <div className='page'>
-                <Link to = '/' className='title'>Y Hacker News</Link>
+                <div>
+                    <Link to = '/' className='title'>Y Hacker News</Link>
+                </div>
+
+                <div>
+                    <Link to = '/' className='title'>
+                        <button className='back_button'>Back</button>
+                    </Link>
+                </div>
 
                 <div className='story_data'>
                     {this.getTitle()}
@@ -33,6 +41,12 @@ class StoryPage extends React.Component{
 
                 <div className='comment_section'>
                     {this.state.kids.map((kid) => <Comment key={kid} id={kid}/>)}
+                </div>
+
+                <div>
+                    <Link to = '/' className='title'>
+                        <button className='back_button'>Back</button>
+                    </Link>
                 </div>
             </div>
         )

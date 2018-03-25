@@ -33,4 +33,18 @@
 
 .comment_section{
     margin: 50px;
+    margin-bottom: 10px;
+}
+
+.back_button{
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    background-color: #3B83E5;
+    margin-bottom: 25px;
 }
