@@ -37,6 +37,7 @@ class Home extends React.Component{
         );
     }
 
+    // Get next 20 stories
     getNewPage(){
         this.setState({page:this.state.page+1});
         this.getData();

@@ -17,7 +17,7 @@ class StoryPage extends React.Component{
             text:"",
             url:null,
             id: parseInt(props.match.params.id, 10),
-            kids:[]
+            kids:null
         }
     }
 
@@ -40,7 +40,7 @@ class StoryPage extends React.Component{
                 </div>
 
                 <div className='comment_section'>
-                    {this.state.kids.map((kid) => <Comment key={kid} id={kid}/>)}
+                    {this.getComments()}
                 </div>
 
                 <div>
@@ -61,6 +61,16 @@ class StoryPage extends React.Component{
             return(
                 <h2>{this.state.title}</h2>
             );
+        }
+    }
+
+    getComments(){
+        if (this.state.kids!=null){
+            return(
+                this.state.kids.map((kid) => <Comment key={kid} id={kid}/>)
+            );
+        }else{
+            return(<div></div>);
         }
     }
 
