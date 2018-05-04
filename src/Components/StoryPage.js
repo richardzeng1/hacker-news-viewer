@@ -13,8 +13,8 @@ class StoryPage extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            title: "",
-            text:"",
+            title: null,
+            text:null,
             url:null,
             id: parseInt(props.match.params.id, 10),
             kids:null
@@ -79,7 +79,7 @@ class StoryPage extends React.Component{
     }
 
     componentWillUnmount(){
-        this.setState({title:"", text:"", url:"", id:0});
+        this.setState({title:null, text:null, url:null, id:0});
     }
 
     getData(){
