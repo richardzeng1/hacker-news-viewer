@@ -50,8 +50,19 @@ class Home extends React.Component{
     }
 
     componentDidMount(){
+         const cachedPage = sessionStorage.getItem('page');
+         if (cachedPage){
+             this.setState({page:cachedPage});
+         }else{
+             this.setState({page:1});
+         }
+
          this.getData();
          console.log(this.state.stories)
+    }
+
+    componentWillUnmount(){
+         sessionStorage.setItem('page', this.state.page);
     }
 
     getData(){
