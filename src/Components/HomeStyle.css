@@ -5,6 +5,12 @@
     color: #ff6600;
 }
 
+.page_indicator{
+    font-family: Verdana;
+    color: #3B83E5;
+    font-weight: normal;
+}
+
 .previous_button{
     padding-left: 80px;
     padding-right: 80px;

@@ -30,6 +30,7 @@ class Home extends React.Component{
                     {this.state.stories.map((story) => <Tile key={story} id={story}/>)}
                 </ul>
                 <div className='button_div'>
+                <h2 className='page_indicator'>Page: {this.state.page}</h2>
                     <button className='previous_button' onClick={()=>this.getNewPage(-1)}>Previous</button>
                     <button className='next_button' onClick={()=>this.getNewPage(1)}>Next</button>
                 </div>
