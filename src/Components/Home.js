@@ -30,18 +30,18 @@ class Home extends React.Component{
                     {this.state.stories.map((story) => <Tile key={story} id={story}/>)}
                 </ul>
                 <div className='button_div'>
-                    <button className='load_button' onClick={()=>this.getNewPage()}>Load More</button>
+                    <button className='previous_button' onClick={()=>this.getNewPage(-1)}>Previous</button>
+                    <button className='next_button' onClick={()=>this.getNewPage(1)}>Next</button>
                 </div>
             </div>
 
         );
     }
 
-    // Get next 20 stories
-    getNewPage(){
-        this.setState({page:this.state.page+1});
+    // Get next 30 stories
+    getNewPage(incrementor){
+        this.setState({page:this.state.page+incrementor});
         this.getData();
-
     }
 
     // Scrolls to top of page when new stories loaded
@@ -68,7 +68,7 @@ class Home extends React.Component{
     getData(){
         fetch(' https://hacker-news.firebaseio.com/v0/topstories.json')
         .then(response => response.json())
-        .then(data=> this.setState({stories:data.slice((19*this.state.page)-19,19*this.state.page)}))
+        .then(data=> this.setState({stories:data.slice((29*this.state.page)-29,29*this.state.page)}))
         .catch(e=>console.log('error', e))
     }
 }
